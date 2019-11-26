@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.activity.mapper.ActFileInfoMapper">
+  <resultMap id="BaseResultMap" type="com.activity.po.ActFileInfo">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="act_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="act_file_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="act_file_url" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="act_file_type" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="act_class" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="uploadtime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="act_file_size" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="act_file_explain" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="act_file_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="act_file_creater" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="act_small_file_url" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, act_id, act_file_name, act_file_url, act_file_type, act_class, uploadtime, act_file_size, 
+    act_file_explain, act_file_status, act_file_creater, act_small_file_url
+  </sql>
+  <insert id="insertSelective" parameterType="com.activity.po.ActFileInfo">
+    insert into act_file_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="actId != null">
+        act_id,
+      </if>
+      <if test="actFileName != null">
+        act_file_name,
+      </if>
+      <if test="actFileUrl != null">
+        act_file_url,
+      </if>
+      <if test="actFileType != null">
+        act_file_type,
+      </if>
+      <if test="actClass != null">
+        act_class,
+      </if>
+      <if test="uploadtime != null">
+        uploadtime,
+      </if>
+      <if test="actFileSize != null">
+        act_file_size,
+      </if>
+      <if test="actFileExplain != null">
+        act_file_explain,
+      </if>
+      <if test="actFileStatus != null">
+        act_file_status,
+      </if>
+      <if test="actFileCreater != null">
+        act_file_creater,
+      </if>
+      <if test="actSmallFileUrl != null">
+        act_small_file_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="actId != null">
+        #{actId,jdbcType=BIGINT},
+      </if>
+      <if test="actFileName != null">
+        #{actFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="actFileUrl != null">
+        #{actFileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="actFileType != null">
+        #{actFileType,jdbcType=VARCHAR},
+      </if>
+      <if test="actClass != null">
+        #{actClass,jdbcType=INTEGER},
+      </if>
+      <if test="uploadtime != null">
+        #{uploadtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="actFileSize != null">
+        #{actFileSize,jdbcType=INTEGER},
+      </if>
+      <if test="actFileExplain != null">
+        #{actFileExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="actFileStatus != null">
+        #{actFileStatus,jdbcType=INTEGER},
+      </if>
+      <if test="actFileCreater != null">
+        #{actFileCreater,jdbcType=VARCHAR},
+      </if>
+      <if test="actSmallFileUrl != null">
+        #{actSmallFileUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.activity.po.ActFileInfo">
+    update act_file_info
+    <set>
+      <if test="actId != null">
+        act_id = #{actId,jdbcType=BIGINT},
+      </if>
+      <if test="actFileName != null">
+        act_file_name = #{actFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="actFileUrl != null">
+        act_file_url = #{actFileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="actFileType != null">
+        act_file_type = #{actFileType,jdbcType=VARCHAR},
+      </if>
+      <if test="actClass != null">
+        act_class = #{actClass,jdbcType=INTEGER},
+      </if>
+      <if test="uploadtime != null">
+        uploadtime = #{uploadtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="actFileSize != null">
+        act_file_size = #{actFileSize,jdbcType=INTEGER},
+      </if>
+      <if test="actFileExplain != null">
+        act_file_explain = #{actFileExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="actFileStatus != null">
+        act_file_status = #{actFileStatus,jdbcType=INTEGER},
+      </if>
+      <if test="actFileCreater != null">
+        act_file_creater = #{actFileCreater,jdbcType=VARCHAR},
+      </if>
+      <if test="actSmallFileUrl != null">
+        act_small_file_url = #{actSmallFileUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
